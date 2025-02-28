@@ -1,4 +1,3 @@
-
 # 🚀 **A Multi-Faceted Approach to Fraudulent Website Detection: Integrating URL Features and Content Analysis**
 
 ## 📝 **Overview**
@@ -49,4 +48,7 @@ This project focuses on detecting fraudulent websites by integrating URL analysi
 
 ## 📚 **References**
 Refer to the research paper for an in-depth literature review and methodology details.
+
+## ⚖ **License**
+All rights reserved to the authors: **Mihir Ranjan and Ranjit Kolkar**.
 
