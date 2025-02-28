@@ -1,10 +1,51 @@
 # A Multi-Faceted Approach to Fraudulent Website Detection: Integrating URL Features and Content Analysis
 
 
-Abstract: ----------
-The proliferation of online platforms has made detecting fraudulent websites a critical challenge. Initially, our approach focused on identifying fraudulent websites based on URL features. However, as cybercriminals adopted techniques to craft legitimate-looking URLs, we extended our system to analyze website content. Our enhanced method- ology involves scraping webpage content and performing sentiment anal- ysis using Twitter RoBERTa to assess intent and detect anomalies. Addi- tionally, we evaluate the confidence of organizational names referenced on the website to determine their relevance and legitimacy. Spelling checks are also implemented to identify subtle yet consistent errors that often signal fraud. This multi-faceted approach strengthens the detection of deceptive websites, addressing both URL-based and content-based fraud vectors, and offers a comprehensive solution for mitigating online threats.
+## Overview
+This project focuses on detecting fraudulent websites by integrating URL analysis and content-based techniques. The system evaluates websites based on various parameters such as URL structure, sentiment analysis, organizational entity recognition, and spelling checks. The approach enhances traditional fraud detection by incorporating machine learning models and NLP-based sentiment analysis.
 
-Introduction: --------
-Fraudulent websites remain a significant cybersecurity issue, targeting unsus- pecting users by imitating trustworthy platforms to steal private data. This study integrates cutting-edge analytical tools and machine learning techniques to create a unified system capable of detecting fraudulent URLs. The framework evaluates the security of a given URL through a variety of factors, including sentiment analysis, organizational entity recognition, website scraping, spelling checks, and a machine learning-based fraud detection classifier.
-To predict the likelihood of fraud, the system uses a Gradient Boosting Classi- fier (GBC) trained on a dataset of URL features. The workflow includes evaluat- ing spelling accuracy, processing text for sentiment and organizational patterns, and scraping website data. These analyses are combined into a final judgment using a weighted scoring system, offering a reliable and interpretable fraud de- tection method.
-The goal of this project is to develop a comprehensive system that examines various URL features to accurately identify fraudulent websites. The system employs URL detection through feature extraction, sentiment analysis, organi- zational entity recognition, spelling checks, and website scraping. The approach forecasts the likelihood of a website being fraudulent by integrating feature- based analysis with predictive modeling using the Gradient Boosting Classifier. This method provides a scalable and effective solution to combat cybersecurity threats, offering high accuracy and insightful information on potential warning signs.
+## Features
+- **URL-Based Analysis:** Examines 30 features of URLs, including domain length, HTTPS usage, and subdomain count.
+- **Sentiment Analysis:** Utilizes Twitter RoBERTa to assess the intent of website content.
+- **Organizational Entity Recognition:** Extracts and verifies organization names mentioned on the website.
+- **Spelling Checker:** Detects subtle inconsistencies in website text.
+- **Machine Learning Model:** Uses a Gradient Boosting Classifier (GBC) to predict fraudulent websites.
+
+## Methodology
+### 1. URL Detection Model
+- Extracts URL features.
+- Trains multiple classifiers (Logistic Regression, Random Forest, SVM, GBC).
+- Selects the best-performing model for prediction.
+
+### 2. Sentiment Analysis
+- Uses the pre-trained `cardiffnlp/twitter-roberta-base-sentiment` model.
+- Classifies content into positive, neutral, or negative sentiment.
+
+### 3. Organizational Entity Recognition
+- Applies a transformer-based Named Entity Recognition (NER) model.
+- Cross-references identified organizations for legitimacy.
+
+### 4. Spelling Checker
+- Identifies and corrects spelling errors.
+- Calculates accuracy scores for content consistency.
+
+### 5. Weighted Scoring System
+- URL Features: **30%**
+- Sentiment Analysis: **30%**
+- Organization Recognition: **20%**
+- Spelling Checker: **20%**
+
+## Results
+- URL detection accuracy: **94.9%**
+- Sentiment analysis, entity recognition, and spelling checks combined to improve fraud detection.
+- Weighted scoring system provides comprehensive fraud detection.
+
+## Future Enhancements
+- **Logo Detection:** Identify misuse of brand logos.
+- **Custom NLP Model:** Develop a dedicated sentiment analysis model.
+- **Real-Time Updates:** Implement active learning techniques.
+- **Multilingual Support:** Expand detection to non-English websites.
+- **Browser Extension/API:** Enhance accessibility for real-world applications.
+
+## References
+Refer to the research paper for an in-depth literature review and methodology details.
